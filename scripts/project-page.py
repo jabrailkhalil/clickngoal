@@ -92,7 +92,8 @@ npm run check</code></pre></div></section>
     values['HEADLINE']=t['headline'];values['PLATFORMINTRO']=esc(t['platformIntro']);values['DOWNLOADINTRO']=esc(t['downloadIntro']);values['COUNTNOTE']=esc(t['countNote']);values['COREINTRO']=esc(t['coreIntro'])
     # One pass avoids replacement inside content or URLs.
     import re
-    page=re.sub('|'.join(sorted(values,key=len,reverse=True)),lambda m:values[m[0]],page)
+    tokens='|'.join(re.escape(key) for key in sorted(values,key=len,reverse=True))
+    page=re.sub(r'(?<![A-Z_])(?:'+tokens+r')(?![A-Z_])',lambda m:values[m[0]],page)
     (folder/'index.html').write_text(page+'\n',encoding='utf8')
 (ROOT/'docs/.nojekyll').write_text('',encoding='utf8')
 (ROOT/'docs/robots.txt').write_text('User-agent: *\nAllow: /clickngoal/\nDisallow: /clickngoal/demo/\nSitemap: '+ORIGIN+'sitemap.xml\n',encoding='utf8')

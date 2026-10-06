@@ -8,9 +8,9 @@
 
 ![Public core: MIT](https://img.shields.io/badge/public_core-MIT-8b5cf6)
 ![Release](https://img.shields.io/github/v/release/jabrailkhalil/clickngoal)
-![Android downloads](https://img.shields.io/github/downloads/jabrailkhalil/clickngoal/total/clickngoal.apk?label=Android%20downloads)
-![Web demo downloads](https://img.shields.io/github/downloads/jabrailkhalil/clickngoal/total/clickngoal-web.zip?label=Web%20demo%20downloads)
-![Source downloads](https://img.shields.io/github/downloads/jabrailkhalil/clickngoal/total/clickngoal-source.zip?label=Source%20downloads)
+![Android downloads](https://img.shields.io/github/downloads/jabrailkhalil/clickngoal/clickngoal.apk?label=Android%20downloads&displayAssetName=false)
+![Web demo downloads](https://img.shields.io/github/downloads/jabrailkhalil/clickngoal/clickngoal-web.zip?label=Web%20demo%20downloads&displayAssetName=false)
+![Source downloads](https://img.shields.io/github/downloads/jabrailkhalil/clickngoal/clickngoal-source.zip?label=Source%20downloads&displayAssetName=false)
 
 clickngoal combines a goal tracker, habit calendar and social network. Record a small daily step, see which goals still need attention today, share progress when you choose, and support people pursuing similar interests. The hosted application is available in Russian and English.
 

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+release/
+artifacts/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+*.keystore
+*.p12
+*.pem
+*.key

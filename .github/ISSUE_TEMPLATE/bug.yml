@@ -1,0 +1,24 @@
+name: Bug report / Ошибка
+description: Reproducible problem in clickngoal or the public demo
+body:
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where did this happen? / Где ошибка?
+      options: [Hosted web/PWA, Official Android APK, Public community demo, Documentation/downloads]
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Platform, browser, version, language, theme
+      placeholder: iPhone, Safari, app 1.0.50, Russian, dark
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps, expected result, actual result / Шаги и результат
+      description: Remove names, tokens, emails and personal goals from screenshots.
+    validations:
+      required: true

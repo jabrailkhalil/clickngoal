@@ -1,0 +1,15 @@
+name: Idea / Предложение
+description: Describe a user problem and improvement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem / Проблема пользователя
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested behaviour and an example / Идея и пример
+    validations:
+      required: true

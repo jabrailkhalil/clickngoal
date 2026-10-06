@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /clickngoal/
+Disallow: /clickngoal/demo/
+Sitemap: https://jabrailkhalil.github.io/clickngoal/sitemap.xml

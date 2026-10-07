@@ -15,7 +15,7 @@ copy = {
   'platforms':'One account. Your devices.', 'platformIntro':'The real application runs in a modern browser. Installation adds convenient access to the same service.',
   'steps':[
    ('iPhone · iPad','Safari → Share → Add to Home Screen → Open as Web App (if offered) → Add.','Web app installed from the website; no App Store package.'),
-   ('Android','Use Chrome’s Install app action, or download the official signed APK below.','The browser/PWA and APK connect to the same hosted account.'),
+   ('Android','Use Chrome’s Install app action, or download the official signed APK below.','APK 1.0.52+ offers updates from GitHub. Download, then confirm installation in Android; your account stays in place.'),
    ('Windows · Linux · ChromeOS','Open in a modern browser. Supported Chrome/Edge/Chromium browsers offer Install app.','Firefox can use the browser version; installation availability varies.'),
    ('macOS','Use the browser, supported Chrome/Edge installation, or Safari → Add to Dock on supported macOS.','There is no separate DMG/PKG distribution promised.')],
   'later':'Install whenever you want. These instructions stay here even after you dismiss a suggestion in the app.',
@@ -41,7 +41,7 @@ copy = {
   'platforms':'Один аккаунт. Ваши устройства.','platformIntro':'Рабочая соцсеть открывается в современном браузере. Установка добавляет удобный доступ к тому же сервису.',
   'steps':[
    ('iPhone · iPad','Safari → «Поделиться» → «На экран Домой» → «Открывать как веб-приложение», если есть → «Добавить».','Веб-приложение с сайта; отдельного пакета App Store нет.'),
-   ('Android','Используйте «Установить приложение» в Chrome либо скачайте официальный подписанный APK ниже.','Браузер, PWA и APK используют ваш аккаунт рабочей платформы.'),
+   ('Android','Используйте «Установить приложение» в Chrome либо скачайте официальный подписанный APK ниже.','APK 1.0.52+ предлагает обновления из GitHub. Скачайте и подтвердите установку в Android; аккаунт сохранится.'),
    ('Windows · Linux · ChromeOS','Откройте в современном браузере. Поддерживаемый Chrome/Edge/Chromium предлагает установку.','Firefox работает как браузерная версия; установка зависит от браузера.'),
    ('macOS','Браузер, установка через подходящий Chrome/Edge либо Safari → «Добавить в Dock» на поддерживаемой macOS.','Отдельная сборка DMG/PKG здесь не предлагается.')],
   'later':'Установить можно позже. Инструкции остаются здесь, даже если вы закрыли предложение установки в приложении.',
@@ -79,6 +79,7 @@ for lang,t in copy.items():
 <section class="features" aria-label="Features">FEATURES</section>
 <section id="install" class="section"><p class="eyebrow">WEB / PWA / ANDROID</p><h2>PLATFORMS</h2><p class="section-intro">PLATFORMINTRO</p><div class="platforms">STEPS</div><p class="note">LATER</p><a href="LIVE" class="button primary">OPEN ↗</a></section>
 <section id="downloads" class="section"><p class="eyebrow">GITHUB RELEASES</p><h2>DOWNLOADS</h2><p class="section-intro">DOWNLOADINTRO</p><div class="packages">FILES</div><div class="count-total"><strong data-download-count="total">—</strong><span>TOTAL</span><small id="counts-status" role="status">LOADING</small></div><p class="note">COUNTNOTE</p><div class="download-links"><a href="REPO/releases">RELEASE ↗</a><a href="REPO/releases/latest/download/SHA256SUMS.txt">HASHES</a><a href="LIVEapi/goallog.apk">FALLBACK</a></div></section>
+WEBINSTALLS
 <section id="source" class="section source"><div><p class="eyebrow">MIT / COMMUNITY FOUNDATION</p><h2>CORE</h2><p>COREINTRO</p><p class="note">BOUNDARY</p><div class="actions"><a class="button secondary" href="PREFIXdemo/">DEMO →</a><a href="REPO">CONTRIBUTE ↗</a></div></div><div class="code-card"><h3>RUN</h3><pre><code>git clone https://github.com/jabrailkhalil/clickngoal.git
 cd clickngoal
 npm ci
@@ -89,6 +90,9 @@ npm run check</code></pre></div></section>
       'LANGURL':ORIGIN if lang=='ru' else ORIGIN+'ru/','OTHERLANG':'en' if lang=='ru' else 'ru','LANGNAME':'English' if lang=='ru' else 'Русский',
       'FEATURES':features,'STEPS':steps,'FILES':files,'LINKS':links,'DOWNLOADS_SHORT':'Загрузки' if lang=='ru' else 'Downloads',
       **{key.upper().replace('PLATFORMINTRO','PLATFORMINTRO'):esc(value) for key,value in t.items() if isinstance(value,str)}}
+    install_title = 'Установки веб-приложения' if lang == 'ru' else 'Installed web app'
+    install_note = 'Учитываем установку, о которой сообщил браузер, либо первый запуск с главного экрана — в том числе на iPhone. Повторные открытия не увеличивают число. Очистка данных браузера может создать новый идентификатор; посещения сайта и запуски APK сюда не входят.' if lang == 'ru' else 'Counts a successful browser installation or first home-screen launch, including iPhone. Reopening does not add an install. Clearing browser data can create a new ID; website visits and native APK launches are excluded.'
+    values['WEBINSTALLS'] = '<section class="section web-installations"><p class="eyebrow">WEB / PWA</p><h2>'+esc(install_title)+'</h2><a href="'+REPO+'/blob/main/guides/releases.md#web-app-installations"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fgoal.clickn.dev%2Fapi%2Fpublic%2Fpwa-installs.json&amp;cacheSeconds=300" alt="'+esc(install_title)+'" height="20"></a><p class="note">'+esc(install_note)+'</p></section>'
     values['HEADLINE']=t['headline'];values['PLATFORMINTRO']=esc(t['platformIntro']);values['DOWNLOADINTRO']=esc(t['downloadIntro']);values['COUNTNOTE']=esc(t['countNote']);values['COREINTRO']=esc(t['coreIntro'])
     # One pass avoids replacement inside content or URLs.
     import re

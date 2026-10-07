@@ -8,6 +8,7 @@
 
 ![Public core: MIT](https://img.shields.io/badge/public_core-MIT-8b5cf6)
 ![Release](https://img.shields.io/github/v/release/jabrailkhalil/clickngoal)
+[![Web app installs](https://img.shields.io/endpoint?url=https%3A%2F%2Fgoal.clickn.dev%2Fapi%2Fpublic%2Fpwa-installs.json&cacheSeconds=300)](guides/releases.md#web-app-installations)
 ![Android downloads](https://img.shields.io/github/downloads/jabrailkhalil/clickngoal/clickngoal.apk?label=Android%20downloads&displayAssetName=false)
 ![Web demo downloads](https://img.shields.io/github/downloads/jabrailkhalil/clickngoal/clickngoal-web.zip?label=Web%20demo%20downloads&displayAssetName=false)
 ![Source downloads](https://img.shields.io/github/downloads/jabrailkhalil/clickngoal/clickngoal-source.zip?label=Source%20downloads&displayAssetName=false)
@@ -15,6 +16,8 @@
 clickngoal combines a goal tracker, habit calendar and social network. Record a small daily step, see which goals still need attention today, share progress when you choose, and support people pursuing similar interests. The hosted application is available in Russian and English.
 
 ## Platforms and installation
+
+Android APK **1.0.52+** checks GitHub Releases for updates daily. Tap **Download update**, then **Install update** and confirm in Android. Your account and settings are retained. Real APK downloads contribute to the GitHub counter; version checks do not. [Update details](guides/releases.md#android-updates-from-github).
 
 | Platform | Available today | How to install or open |
 | --- | --- | --- |
@@ -72,6 +75,8 @@ The complete source of the hosted service is not published here. Its authenticat
 Older packages stay in [Releases](https://github.com/jabrailkhalil/clickngoal/releases). Stable `latest/download/…` links follow the newest published release. The web ZIP is a local demonstration, not an offline copy of hosted accounts.
 
 GitHub counts uploaded release-file downloads, including repeated downloads. The website totals the APK, web ZIP and source ZIP across release pages. These are **file downloads, not people or PWA installations**. Installing a PWA on iPhone is a browser action, not a ZIP download. Automatic GitHub “Source code” archives do not provide this asset counter, so a separate public-source ZIP is attached. Counters may refresh with a delay; API failures show unavailable rather than an invented number.
+
+The **Web app installs** badge shows the hosted application's aggregate observed PWA installations. It records a successful browser installation or first installed-app launch (including iPhone/iPad), once per anonymous browser installation ID. Reopening the app does not increment it. Browser visits and native APK launches are excluded. Clearing browser data can produce a new ID; installations never opened on iOS are not observable. No individual IDs, accounts or content are published. See [how installation counts work](guides/releases.md#web-app-installations).
 
 ## Run the public demo
 
